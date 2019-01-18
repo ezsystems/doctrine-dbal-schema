@@ -1,0 +1,34 @@
+{
+    "name": "ezsystems/doctrine-dbal-schema",
+    "description": "Abstraction layer, on top of Doctrine, for cross-DBMS schema import",
+    "type": "ezplatform-bundle",
+    "license": "GPL-2.0-only",
+    "require": {
+        "php": "^7.1",
+        "doctrine/dbal": "^2.9"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.14",
+        "phpunit/phpunit": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "EzSystems\\DoctrineSchemaBundle\\": "src/bundle",
+            "EzSystems\\DoctrineSchema\\": "src/lib"
+        }
+    },
+    "scripts": {
+        "fix-cs": "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
+    },
+    "extra": {
+        "_ezplatform_branch_for_behat_tests": "master",
+        "branch-alias": {
+            "dev-master": "0.1.x-dev",
+            "dev-tmp_ci_branch": "0.1.x-dev"
+        },
+        "thanks": {
+            "name": "ezsystems/ezplatform",
+            "url": "https://github.com/ezsystems/ezplatform"
+        }
+    }
+}
