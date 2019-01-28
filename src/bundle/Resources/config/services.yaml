@@ -3,3 +3,6 @@ services:
         autowire: true
         autoconfigure: true
         public: false
+
+    EzSystems\DoctrineSchema\Exporter\:
+        resource: '../../../lib/Exporter/*'
