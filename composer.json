@@ -21,6 +21,11 @@
             "EzSystems\\DoctrineSchema\\": "src/lib"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "EzSystems\\Tests\\DoctrineSchema\\": "tests/lib"
+        }
+    },
     "scripts": {
         "fix-cs": "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
     },
