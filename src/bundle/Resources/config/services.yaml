@@ -6,3 +6,9 @@ services:
 
     EzSystems\DoctrineSchema\Exporter\:
         resource: '../../../lib/Exporter/*'
+
+    EzSystems\DoctrineSchema\Database\DbPlatform\:
+        resource: '../../../lib/Database/DbPlatform/*'
+
+    EzSystems\DoctrineSchema\Importer\:
+        resource: '../../../lib/Importer/*'

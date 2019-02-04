@@ -5,3 +5,5 @@ services:
         public: false
 
     EzSystems\DoctrineSchema\API\SchemaExporter: '@EzSystems\DoctrineSchema\Exporter\SchemaExporter'
+
+    EzSystems\DoctrineSchema\API\SchemaImporter: '@EzSystems\DoctrineSchema\Importer\SchemaImporter'
