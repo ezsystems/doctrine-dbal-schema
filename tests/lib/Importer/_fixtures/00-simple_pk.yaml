@@ -1,0 +1,4 @@
+tables:
+    my_table:
+        id:
+            id: { type: integer, nullable: false, options: { autoincrement: true } }

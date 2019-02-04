@@ -1,0 +1,10 @@
+defaults:
+    tables:
+        options:
+            charset: 'utf8mb4'
+            collate: 'utf8mb4_unicode_520_ci'
+
+tables:
+    my_table:
+        fields:
+            name: { type: string, nullable: false }

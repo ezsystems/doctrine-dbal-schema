@@ -1,0 +1,7 @@
+tables:
+    my_table:
+        id:
+            id: { type: integer, nullable: false, options: { autoincrement: true } }
+            version: { type: integer, nullable: false, options: { default: '0' } }
+        fields:
+            name: { type: string, nullable: false }

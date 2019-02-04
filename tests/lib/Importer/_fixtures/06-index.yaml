@@ -1,0 +1,11 @@
+tables:
+    my_table:
+        uniqueConstraints:
+            ux_name: { fields: [name] }
+        indexes:
+            ix_simple: { fields: [data1] }
+            ix_composite: { fields: [data1, data2] }
+        fields:
+            data1: { type: integer, nullable: false }
+            data2: { type: integer, nullable: false }
+            name: { type: string, nullable: false }
