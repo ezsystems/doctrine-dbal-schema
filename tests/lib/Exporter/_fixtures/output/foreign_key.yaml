@@ -1,0 +1,15 @@
+tables:
+    my_main_table:
+        id:
+            id: { type: integer, nullable: false, options: { autoincrement: true } }
+        fields:
+            name: { type: string, nullable: true, length: 255 }
+    my_secondary_table:
+        indexes:
+            fk_my_secondary_table_id_main: { fields: [main_id] }
+        id:
+            id: { type: integer, nullable: false, options: { autoincrement: true } }
+        fields:
+            main_id: { type: integer, nullable: false }
+        foreignKeys:
+            fk_my_secondary_table_id_main: { fields: [main_id], foreignTable: my_main_table, foreignFields: [id], options: { onDelete: CASCADE, onUpdate: CASCADE } }

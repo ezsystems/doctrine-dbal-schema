@@ -1,0 +1,6 @@
+tables:
+    my_table:
+        id:
+            id: { type: integer, nullable: false, options: { autoincrement: true } }
+        fields:
+            name: { type: string, nullable: true, length: 64 }
