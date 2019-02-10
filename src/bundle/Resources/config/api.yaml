@@ -7,3 +7,5 @@ services:
     EzSystems\DoctrineSchema\API\SchemaExporter: '@EzSystems\DoctrineSchema\Exporter\SchemaExporter'
 
     EzSystems\DoctrineSchema\API\SchemaImporter: '@EzSystems\DoctrineSchema\Importer\SchemaImporter'
+
+    EzSystems\DoctrineSchema\API\DbPlatformFactory: '@EzSystems\DoctrineSchema\Database\DbPlatformFactory'

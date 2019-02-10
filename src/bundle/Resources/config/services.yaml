@@ -3,12 +3,19 @@ services:
         autowire: true
         autoconfigure: true
         public: false
+    _instanceof:
+        EzSystems\DoctrineSchema\Database\DbPlatform\DbPlatform:
+            tags: ['doctrine.dbplatform']
 
     EzSystems\DoctrineSchema\Exporter\:
         resource: '../../../lib/Exporter/*'
 
-    EzSystems\DoctrineSchema\Database\DbPlatform\:
-        resource: '../../../lib/Database/DbPlatform/*'
-
     EzSystems\DoctrineSchema\Importer\:
         resource: '../../../lib/Importer/*'
+
+    EzSystems\DoctrineSchema\Database\DbPlatformFactory:
+        arguments:
+            $dbPlatforms: !tagged doctrine.dbplatform
+
+    EzSystems\DoctrineSchema\Database\DbPlatform\:
+        resource: '../../../lib/Database/DbPlatform/*'
