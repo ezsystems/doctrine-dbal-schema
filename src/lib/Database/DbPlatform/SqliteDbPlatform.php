@@ -8,12 +8,21 @@ declare(strict_types=1);
 
 namespace EzSystems\DoctrineSchema\Database\DbPlatform;
 
+use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Platforms\SqlitePlatform;
 use Doctrine\DBAL\Schema\ForeignKeyConstraint;
 use Doctrine\DBAL\Schema\Table;
+use EzSystems\DoctrineSchema\Event\Subscriber\SqliteSessionInit;
 
 class SqliteDbPlatform extends SqlitePlatform implements DbPlatform
 {
+    public function __construct(EventManager $eventManager)
+    {
+        parent::__construct();
+
+        $eventManager->addEventSubscriber(new SqliteSessionInit());
+    }
+
     /**
      * {@inheritdoc}
      */

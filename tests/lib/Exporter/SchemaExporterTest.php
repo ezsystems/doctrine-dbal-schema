@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace EzSystems\Tests\DoctrineSchema\Exporter;
 
+use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
@@ -49,7 +50,7 @@ class SchemaExporterTest extends TestCase
     {
         $data = [];
 
-        $databasePlatforms = [new SqliteDbPlatform(), new MySqlPlatform()];
+        $databasePlatforms = [new SqliteDbPlatform(new EventManager()), new MySqlPlatform()];
 
         // iterate over output files to avoid loading it for each platform
         $directoryIterator = new \DirectoryIterator(__DIR__ . '/_fixtures/output');

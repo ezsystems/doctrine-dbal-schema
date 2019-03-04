@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace EzSystems\Tests\DoctrineSchema\Database\Builder;
 
+use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
@@ -25,7 +26,7 @@ class SqliteTestDatabaseBuilder implements TestDatabaseBuilder
         return DriverManager::getConnection(
             [
                 'url' => 'sqlite:///:memory:',
-                'platform' => new SqliteDbPlatform(),
+                'platform' => new SqliteDbPlatform(new EventManager()),
             ],
             new Configuration()
         );

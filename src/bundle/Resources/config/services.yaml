@@ -26,3 +26,5 @@ services:
     EzSystems\DoctrineSchema\Builder\SchemaBuilder:
         arguments:
             $defaultTableOptions: '%ez_doctrine_schema.default_table_options%'
+
+    Doctrine\Common\EventManager: ~
