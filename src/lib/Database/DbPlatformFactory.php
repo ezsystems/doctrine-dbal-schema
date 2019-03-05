@@ -14,7 +14,7 @@ use EzSystems\DoctrineSchema\API\DbPlatformFactory as APIDbPlatformFactory;
 class DbPlatformFactory implements APIDbPlatformFactory
 {
     /**
-     * @var array
+     * @var \EzSystems\DoctrineSchema\Database\DbPlatform\DbPlatform[]
      */
     private $dbPlatforms = [];
 
