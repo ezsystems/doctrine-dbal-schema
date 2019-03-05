@@ -9,3 +9,5 @@ services:
     EzSystems\DoctrineSchema\API\SchemaImporter: '@EzSystems\DoctrineSchema\Importer\SchemaImporter'
 
     EzSystems\DoctrineSchema\API\DbPlatformFactory: '@EzSystems\DoctrineSchema\Database\DbPlatformFactory'
+
+    EzSystems\DoctrineSchema\API\Builder\SchemaBuilder: '@EzSystems\DoctrineSchema\Builder\SchemaBuilder'

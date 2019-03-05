@@ -1,3 +1,6 @@
+parameters:
+    ez_doctrine_schema.default_table_options: []
+
 services:
     _defaults:
         autowire: true
@@ -19,3 +22,7 @@ services:
 
     EzSystems\DoctrineSchema\Database\DbPlatform\:
         resource: '../../../lib/Database/DbPlatform/*'
+
+    EzSystems\DoctrineSchema\Builder\SchemaBuilder:
+        arguments:
+            $defaultTableOptions: '%ez_doctrine_schema.default_table_options%'
