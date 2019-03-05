@@ -33,7 +33,7 @@ interface SchemaBuilder
      *
      * @param string $schemaFilePath
      *
-     * @return mixed
+     * @return \Doctrine\DBAL\Schema\Schema
      */
     public function importSchemaFromFile(string $schemaFilePath): Schema;
 }

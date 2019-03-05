@@ -41,7 +41,7 @@ class PostgreSqlDbPlatform extends PostgreSQL100Platform implements DbPlatform
      *
      * @throws \InvalidArgumentException
      */
-    public function getDropTableSQL($table)
+    public function getDropTableSQL($table): string
     {
         $tableArg = $table;
 

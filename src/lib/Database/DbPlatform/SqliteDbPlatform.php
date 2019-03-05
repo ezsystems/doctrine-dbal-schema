@@ -65,7 +65,7 @@ class SqliteDbPlatform extends SqlitePlatform implements DbPlatform
      *
      * {@inheritdoc}
      */
-    public function getDropForeignKeySQL($foreignKey, $table)
+    public function getDropForeignKeySQL($foreignKey, $table): string
     {
         // dropping FKs is not supported by Sqlite
 
@@ -77,7 +77,7 @@ class SqliteDbPlatform extends SqlitePlatform implements DbPlatform
      *
      * {@inheritdoc}
      */
-    public function getCreateForeignKeySQL(ForeignKeyConstraint $foreignKey, $table)
+    public function getCreateForeignKeySQL(ForeignKeyConstraint $foreignKey, $table): string
     {
         return '-- ';
     }
