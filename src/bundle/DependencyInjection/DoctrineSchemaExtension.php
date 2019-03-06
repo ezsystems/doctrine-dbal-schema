@@ -17,6 +17,16 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 class DoctrineSchemaExtension extends Extension
 {
     /**
+     * Override default extension alias name to include eZ vendor in name.
+     *
+     * @return string
+     */
+    public function getAlias(): string
+    {
+        return 'ez_doctrine_schema';
+    }
+
+    /**
      * Load Doctrine Schema Extension config.
      *
      * @param array $configs
@@ -36,5 +46,15 @@ class DoctrineSchemaExtension extends Extension
 
         $loader->load('api.yaml');
         $container->addResource(new FileResource(__DIR__ . '/../Resources/config/api.yaml'));
+
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+        if (isset($config['tables']['options'])) {
+            $container->setParameter(
+                'ez_doctrine_schema.default_table_options',
+                $config['tables']['options']
+            );
+        }
     }
 }

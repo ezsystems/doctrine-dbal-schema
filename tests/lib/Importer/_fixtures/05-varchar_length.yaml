@@ -1,0 +1,4 @@
+tables:
+    my_table:
+        fields:
+            name: { type: string, nullable: false, length: 64 }
