@@ -1,0 +1,45 @@
+language: php
+dist: xenial
+
+services:
+    - mysql
+
+cache:
+    directories:
+        - $HOME/.composer/cache/files
+
+matrix:
+    fast_finish: true
+    include:
+        - name: 'Unit tests on PHP 7.1'
+          php: '7.1'
+          env: CMD='composer test' MYSQL_DATABASE_URL='mysql://root@localhost/testdb'
+        - name: 'Unit tests on PHP 7.3'
+          php: '7.3'
+          env: CMD='composer test' MYSQL_DATABASE_URL='mysql://root@localhost/testdb'
+        - name: 'Code Style validation'
+          php: '7.3'
+          env: CMD='php ./vendor/bin/php-cs-fixer fix --dry-run -v --show-progress=estimating'
+
+# test only master, stable branches and pull requests
+branches:
+    only:
+        - master
+        - /^\d.\d+$/
+
+before_install:
+    # Disable memory_limit for composer
+    - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+    # Create MySQL database for tests
+    - mysql -e 'CREATE DATABASE testdb;'
+
+install:
+    - travis_retry composer install --no-progress --no-interaction --prefer-dist
+
+script:
+    - composer validate
+    - "$CMD"
+
+# reduce depth (history) of git checkout
+git:
+    depth: 10
