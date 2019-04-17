@@ -9,10 +9,10 @@ declare(strict_types=1);
 namespace EzSystems\DoctrineSchema\Database\DbPlatform;
 
 use Doctrine\Common\EventManager;
+use Doctrine\DBAL\Event\Listeners\SQLSessionInit;
 use Doctrine\DBAL\Platforms\SqlitePlatform;
 use Doctrine\DBAL\Schema\ForeignKeyConstraint;
 use Doctrine\DBAL\Schema\Table;
-use EzSystems\DoctrineSchema\Event\Subscriber\SqliteSessionInit;
 
 class SqliteDbPlatform extends SqlitePlatform implements DbPlatform
 {
@@ -20,7 +20,7 @@ class SqliteDbPlatform extends SqlitePlatform implements DbPlatform
     {
         parent::__construct();
 
-        $eventManager->addEventSubscriber(new SqliteSessionInit());
+        $eventManager->addEventSubscriber(new SQLSessionInit('PRAGMA FOREIGN_KEYS = ON'));
     }
 
     /**
