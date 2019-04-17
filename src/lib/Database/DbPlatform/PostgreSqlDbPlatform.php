@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace EzSystems\DoctrineSchema\Database\DbPlatform;
 
+use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Event\SchemaDropTableEventArgs;
 use Doctrine\DBAL\Events;
 use Doctrine\DBAL\Platforms\PostgreSQL100Platform;
@@ -16,6 +17,13 @@ use InvalidArgumentException;
 
 class PostgreSqlDbPlatform extends PostgreSQL100Platform implements DbPlatform
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function addEventSubscribers(EventManager $eventManager): void
+    {
+    }
+
     /**
      * {@inheritdoc}
      */

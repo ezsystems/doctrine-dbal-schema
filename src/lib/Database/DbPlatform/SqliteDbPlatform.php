@@ -16,10 +16,11 @@ use Doctrine\DBAL\Schema\Table;
 
 class SqliteDbPlatform extends SqlitePlatform implements DbPlatform
 {
-    public function __construct(EventManager $eventManager)
+    /**
+     * {@inheritdoc}
+     */
+    public function addEventSubscribers(EventManager $eventManager): void
     {
-        parent::__construct();
-
         $eventManager->addEventSubscriber(new SQLSessionInit('PRAGMA FOREIGN_KEYS = ON'));
     }
 
