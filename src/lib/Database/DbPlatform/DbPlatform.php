@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace EzSystems\DoctrineSchema\Database\DbPlatform;
 
+use Doctrine\Common\EventManager;
+
 interface DbPlatform
 {
     /**
@@ -21,4 +23,11 @@ interface DbPlatform
      * @return string
      */
     public function getDriverName(): string;
+
+    /**
+     * Add event subscribers predefined and required by an implementation.
+     *
+     * @param \Doctrine\Common\EventManager $eventManager
+     */
+    public function addEventSubscribers(EventManager $eventManager): void;
 }
