@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace EzSystems\Tests\DoctrineSchema\Database\DbPlatform;
 
-use Doctrine\Common\EventManager;
 use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\ParameterType;
 use EzSystems\DoctrineSchema\Database\DbPlatform\SqliteDbPlatform;
@@ -29,7 +28,7 @@ class SqliteDbPlatformTest extends TestCase
 
     public function setUp(): void
     {
-        $this->sqliteDbPlatform = new SqliteDbPlatform(new EventManager());
+        $this->sqliteDbPlatform = new SqliteDbPlatform();
         $this->testDatabaseFactory = new TestDatabaseFactory();
     }
 
