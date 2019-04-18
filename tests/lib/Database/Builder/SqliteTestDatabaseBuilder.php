@@ -23,12 +23,14 @@ class SqliteTestDatabaseBuilder implements TestDatabaseBuilder
      */
     public function buildDatabase(): Connection
     {
+        $dbPlatform = new SqliteDbPlatform();
         $eventManager = new EventManager();
+        $dbPlatform->addEventSubscribers($eventManager);
 
         return DriverManager::getConnection(
             [
                 'url' => 'sqlite:///:memory:',
-                'platform' => new SqliteDbPlatform($eventManager),
+                'platform' => $dbPlatform,
             ],
             new Configuration(),
             $eventManager
