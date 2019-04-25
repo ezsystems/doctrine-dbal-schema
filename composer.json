@@ -31,10 +31,10 @@
         "test": "@php ./vendor/bin/phpunit -vc phpunit.xml"
     },
     "extra": {
-        "_ezplatform_branch_for_behat_tests": "2.5",
+        "_ezplatform_branch_for_behat_tests": "master",
         "branch-alias": {
-            "dev-master": "0.1.x-dev",
-            "dev-tmp_ci_branch": "0.1.x-dev"
+            "dev-master": "0.2.x-dev",
+            "dev-tmp_ci_branch": "0.2.x-dev"
         },
         "thanks": {
             "name": "ezsystems/ezplatform",
