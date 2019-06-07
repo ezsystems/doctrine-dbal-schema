@@ -11,9 +11,6 @@ cache:
 matrix:
     fast_finish: true
     include:
-        - name: 'Unit tests on PHP 7.1'
-          php: '7.1'
-          env: CMD='composer test' MYSQL_DATABASE_URL='mysql://root@localhost/testdb'
         - name: 'Unit tests on PHP 7.3'
           php: '7.3'
           env: CMD='composer test' MYSQL_DATABASE_URL='mysql://root@localhost/testdb'

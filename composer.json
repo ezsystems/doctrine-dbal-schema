@@ -4,7 +4,7 @@
     "type": "ezplatform-bundle",
     "license": "GPL-2.0-only",
     "require": {
-        "php": "^7.1",
+        "php": "^7.3",
         "doctrine/dbal": "^2.9",
         "symfony/config": "^4.3",
         "symfony/dependency-injection": "^4.3",
