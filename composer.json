@@ -4,12 +4,12 @@
     "type": "ezplatform-bundle",
     "license": "GPL-2.0-only",
     "require": {
-        "php": "^7.1",
-        "symfony/http-kernel": "^3.4",
-        "symfony/yaml": "^3.4",
+        "php": "^7.3",
         "doctrine/dbal": "^2.9",
-        "symfony/dependency-injection": "^3.4",
-        "symfony/config": "^3.4"
+        "symfony/config": "^4.3",
+        "symfony/dependency-injection": "^4.3",
+        "symfony/http-kernel": "^4.3",
+        "symfony/yaml": "^4.3"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.14",
