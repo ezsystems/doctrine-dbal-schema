@@ -8,9 +8,7 @@ declare(strict_types=1);
 
 namespace EzSystems\DoctrineSchema\API\Event;
 
-use Symfony\Component\EventDispatcher\Event;
-
-class SchemaBuilderEvents extends Event
+class SchemaBuilderEvents
 {
     const BUILD_SCHEMA = 'ez.schema.build_schema';
 }
