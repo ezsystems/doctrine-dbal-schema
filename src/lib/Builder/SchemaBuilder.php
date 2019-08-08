@@ -68,7 +68,7 @@ class SchemaBuilder implements APISchemaBuilder
         $this->schema = new Schema([], [], $config);
         if ($this->eventDispatcher->hasListeners(SchemaBuilderEvents::BUILD_SCHEMA)) {
             $event = new SchemaBuilderEvent($this, $this->schema);
-            $this->eventDispatcher->dispatch(SchemaBuilderEvents::BUILD_SCHEMA, $event);
+            $this->eventDispatcher->dispatch($event, SchemaBuilderEvents::BUILD_SCHEMA);
         }
 
         return $this->schema;
