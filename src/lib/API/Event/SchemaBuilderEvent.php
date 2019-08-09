@@ -10,7 +10,7 @@ namespace EzSystems\DoctrineSchema\API\Event;
 
 use Doctrine\DBAL\Schema\Schema;
 use EzSystems\DoctrineSchema\API\Builder\SchemaBuilder;
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 class SchemaBuilderEvent extends Event
 {
