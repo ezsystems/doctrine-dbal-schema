@@ -33,8 +33,6 @@ class SchemaExporter implements APISchemaExporter
     /**
      * Export \Doctrine\DBAL\Schema object to the custom Yaml format.
      *
-     * @param \Doctrine\DBAL\Schema\Schema $schema
-     *
      * @return string representation of database schema in Yaml format
      *
      * @throws \Doctrine\DBAL\DBALException

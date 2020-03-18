@@ -27,10 +27,6 @@ class TestDatabaseFactory
     }
 
     /**
-     * @param \Doctrine\DBAL\Platforms\AbstractPlatform $databasePlatform
-     *
-     * @return \Doctrine\DBAL\Connection
-     *
      * @throws \EzSystems\Tests\DoctrineSchema\Database\TestDatabaseConfigurationException
      * @throws \Doctrine\DBAL\DBALException
      */

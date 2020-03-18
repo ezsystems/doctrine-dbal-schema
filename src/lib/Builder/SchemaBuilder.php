@@ -45,11 +45,6 @@ class SchemaBuilder implements APISchemaBuilder
      */
     private $defaultTableOptions;
 
-    /**
-     * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher
-     * @param \EzSystems\DoctrineSchema\API\SchemaImporter $schemaImporter
-     * @param array $defaultTableOptions
-     */
     public function __construct(
         EventDispatcherInterface $eventDispatcher,
         SchemaImporter $schemaImporter,

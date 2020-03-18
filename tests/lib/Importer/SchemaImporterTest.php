@@ -179,7 +179,6 @@ class SchemaImporterTest extends TestCase
      * @dataProvider providerForTestImportFromFile
      *
      * @param string $yamlSchemaDefinitionFile custom Yaml schema definition fixture file name
-     * @param \Doctrine\DBAL\Schema\Schema $expectedSchema
      *
      * @throws \EzSystems\DoctrineSchema\API\Exception\InvalidConfigurationException
      * @throws \Doctrine\DBAL\DBALException

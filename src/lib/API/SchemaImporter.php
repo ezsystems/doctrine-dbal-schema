@@ -20,7 +20,6 @@ interface SchemaImporter
     /**
      * Import database schema into \Doctrine\DBAL\Schema from file containing custom Yaml format.
      *
-     * @param string $schemaFilePath
      * @param \Doctrine\DBAL\Schema\Schema|null $targetSchema existing schema to import into, if not given, an empty one will be created
      *
      * @return \Doctrine\DBAL\Schema\Schema imported schema
@@ -33,7 +32,6 @@ interface SchemaImporter
     /**
      * Import database schema into \Doctrine\DBAL\Schema from string containing custom Yaml format.
      *
-     * @param string $schemaDefinition
      * @param \Doctrine\DBAL\Schema\Schema|null $targetSchema existing schema to import into, if not given, an empty one will be created
      *
      * @return \Doctrine\DBAL\Schema\Schema imported schema

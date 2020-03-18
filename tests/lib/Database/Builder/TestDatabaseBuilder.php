@@ -13,8 +13,6 @@ use Doctrine\DBAL\Connection;
 interface TestDatabaseBuilder
 {
     /**
-     * @return \Doctrine\DBAL\Connection
-     *
      * @throws \Doctrine\DBAL\DBALException
      * @throws \EzSystems\Tests\DoctrineSchema\Database\TestDatabaseConfigurationException
      */

@@ -18,8 +18,6 @@ class DoctrineSchemaExtension extends Extension
 {
     /**
      * Override default extension alias name to include eZ vendor in name.
-     *
-     * @return string
      */
     public function getAlias(): string
     {
@@ -28,9 +26,6 @@ class DoctrineSchemaExtension extends Extension
 
     /**
      * Load Doctrine Schema Extension config.
-     *
-     * @param array $configs
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      *
      * @throws \Exception
      */

@@ -17,10 +17,6 @@ interface SchemaExporter
 {
     /**
      * Export \Doctrine\DBAL\Schema object to the custom Yaml format.
-     *
-     * @param \Doctrine\DBAL\Schema\Schema $schemaDefinition
-     *
-     * @return string
      */
     public function export(Schema $schemaDefinition): string;
 }

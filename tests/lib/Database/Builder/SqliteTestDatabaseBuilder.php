@@ -17,8 +17,6 @@ use EzSystems\DoctrineSchema\Database\DbPlatform\SqliteDbPlatform;
 class SqliteTestDatabaseBuilder implements TestDatabaseBuilder
 {
     /**
-     * @return \Doctrine\DBAL\Connection
-     *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function buildDatabase(): Connection

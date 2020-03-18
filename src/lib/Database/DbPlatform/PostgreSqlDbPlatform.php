@@ -45,8 +45,6 @@ class PostgreSqlDbPlatform extends PostgreSQL100Platform implements DbPlatform
      *
      * @param \Doctrine\DBAL\Schema\Table|string $table
      *
-     * @return string
-     *
      * @throws \InvalidArgumentException
      */
     public function getDropTableSQL($table): string

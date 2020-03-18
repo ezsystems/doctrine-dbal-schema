@@ -23,17 +23,11 @@ interface SchemaBuilder
      *
      * @see \EzSystems\DoctrineSchema\API\Event\SchemaBuilderEvent
      * @see \EzSystems\DoctrineSchema\API\Event\SchemaBuilderEvents::BUILD_SCHEMA
-     *
-     * @return \Doctrine\DBAL\Schema\Schema
      */
     public function buildSchema(): Schema;
 
     /**
      * Import Schema from Yaml schema definition file into Schema object.
-     *
-     * @param string $schemaFilePath
-     *
-     * @return \Doctrine\DBAL\Schema\Schema
      */
     public function importSchemaFromFile(string $schemaFilePath): Schema;
 }

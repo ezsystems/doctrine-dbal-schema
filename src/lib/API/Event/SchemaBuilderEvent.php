@@ -24,10 +24,6 @@ class SchemaBuilderEvent extends Event
      */
     private $schema;
 
-    /**
-     * @param \EzSystems\DoctrineSchema\API\Builder\SchemaBuilder $schemaBuilder
-     * @param \Doctrine\DBAL\Schema\Schema $schema
-     */
     public function __construct(SchemaBuilder $schemaBuilder, Schema $schema)
     {
         $this->schemaBuilder = $schemaBuilder;

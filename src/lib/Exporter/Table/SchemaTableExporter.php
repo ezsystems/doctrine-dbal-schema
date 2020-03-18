@@ -18,10 +18,6 @@ class SchemaTableExporter
     /**
      * Export \Doctrine\DBAL\Schema\Table to array representation.
      *
-     * @param \Doctrine\DBAL\Schema\Table $table
-     *
-     * @return array
-     *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function export(Table $table): array
@@ -57,9 +53,6 @@ class SchemaTableExporter
     /**
      * Export Schema Table indices.
      *
-     * @param array $tableMetadata
-     * @param \Doctrine\DBAL\Schema\Table $table
-     *
      * @return array modified $tableMetadata
      */
     private function exportIndices(array $tableMetadata, Table $table): array
@@ -94,9 +87,6 @@ class SchemaTableExporter
 
     /**
      * Export Schema Table columns.
-     *
-     * @param array $tableMetadata
-     * @param \Doctrine\DBAL\Schema\Table $table
      *
      * @return array modified $tableMetadata
      *
@@ -134,9 +124,6 @@ class SchemaTableExporter
 
     /**
      * Export Schema Table columns.
-     *
-     * @param array $tableMetadata
-     * @param \Doctrine\DBAL\Schema\Table $table
      *
      * @return array modified $tableMetadata
      */
