@@ -53,8 +53,6 @@ class SqliteDbPlatform extends SqlitePlatform implements DbPlatform
 
     /**
      * Override default behavior of Sqlite db platform to force generating foreign keys.
-     *
-     * @return bool
      */
     public function supportsForeignKeyConstraints(): bool
     {

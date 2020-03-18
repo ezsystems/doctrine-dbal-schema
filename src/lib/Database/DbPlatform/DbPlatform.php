@@ -19,15 +19,11 @@ interface DbPlatform
      * (or its implementation).
      *
      * @see \Doctrine\DBAL\Platforms\AbstractPlatform
-     *
-     * @return string
      */
     public function getDriverName(): string;
 
     /**
      * Add event subscribers predefined and required by an implementation.
-     *
-     * @param \Doctrine\Common\EventManager $eventManager
      */
     public function addEventSubscribers(EventManager $eventManager): void;
 }

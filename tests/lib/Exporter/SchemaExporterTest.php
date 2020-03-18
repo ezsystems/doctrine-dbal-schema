@@ -30,7 +30,7 @@ class SchemaExporterTest extends TestCase
      */
     private $testDatabaseFactory;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->exporter = new SchemaExporter(
             new SchemaTableExporter()
@@ -42,8 +42,6 @@ class SchemaExporterTest extends TestCase
      * Load expected input/output fixtures for SchemaExporter.
      *
      * @see testExport
-     *
-     * @return array
      */
     public function providerForTestExport(): array
     {
@@ -88,11 +86,7 @@ class SchemaExporterTest extends TestCase
     /**
      * @dataProvider providerForTestExport
      *
-     * @param \Doctrine\DBAL\Platforms\AbstractPlatform $databasePlatform
      * @param string $inputSchemaSQL
-     * @param string $expectedSchemaDefinition
-     * @param string $inputFilePath
-     * @param string $outputFilePath
      *
      * @throws \Doctrine\DBAL\DBALException
      */
@@ -137,10 +131,6 @@ class SchemaExporterTest extends TestCase
     }
 
     /**
-     * @param \Doctrine\DBAL\Platforms\AbstractPlatform $databasePlatform
-     *
-     * @return \Doctrine\DBAL\Connection
-     *
      * @throws \EzSystems\Tests\DoctrineSchema\Database\TestDatabaseConfigurationException
      * @throws \Doctrine\DBAL\DBALException
      */

@@ -44,11 +44,6 @@ class SchemaImporter implements APISchemaImporter
 
     /**
      * Import schema described by array loaded from Yaml custom format to the currently configured database.
-     *
-     * @param array $schemaDefinition
-     * @param \Doctrine\DBAL\Schema\Schema|null $targetSchema
-     *
-     * @return \Doctrine\DBAL\Schema\Schema
      */
     private function importFromArray(array $schemaDefinition, ?Schema $targetSchema = null): Schema
     {
@@ -67,8 +62,6 @@ class SchemaImporter implements APISchemaImporter
      * Import table from the given configuration to the given schema.
      *
      * @param \Doctrine\DBAL\Schema\Schema target schema
-     * @param string $tableName
-     * @param array $tableConfiguration
      */
     private function importSchemaTable(
         Schema $schema,
@@ -124,7 +117,6 @@ class SchemaImporter implements APISchemaImporter
     /**
      * Adds columns to the given $table.
      *
-     * @param \Doctrine\DBAL\Schema\Table $table
      * @param array $columnList list of columns with their configuration
      */
     private function addSchemaTableColumns(Table $table, array $columnList): void

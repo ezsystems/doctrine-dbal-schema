@@ -16,8 +16,6 @@ use EzSystems\Tests\DoctrineSchema\Database\TestDatabaseConfigurationException;
 class MySqlTestDatabaseBuilder implements TestDatabaseBuilder
 {
     /**
-     * @return \Doctrine\DBAL\Connection
-     *
      * @throws \Doctrine\DBAL\DBALException
      * @throws \EzSystems\Tests\DoctrineSchema\Database\TestDatabaseConfigurationException
      */
