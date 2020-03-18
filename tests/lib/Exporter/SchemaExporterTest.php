@@ -30,7 +30,7 @@ class SchemaExporterTest extends TestCase
      */
     private $testDatabaseFactory;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->exporter = new SchemaExporter(
             new SchemaTableExporter()
