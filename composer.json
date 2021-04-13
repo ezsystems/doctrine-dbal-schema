@@ -12,6 +12,7 @@
         "symfony/config": "^3.4"
     },
     "require-dev": {
+        "ezsystems/ezplatform-code-style": "^0.4.0",
         "friendsofphp/php-cs-fixer": "^2.14",
         "phpunit/phpunit": "^7.5"
     },
