@@ -1,0 +1,23 @@
+tables:
+    my_table:
+        id:
+            id: { type: integer, nullable: false, options: { autoincrement: true } }
+        uniqueConstraints:
+            - { fields: [name] }
+        indexes:
+            - { fields: [data1] }
+            - { fields: [data1, data2] }
+        fields:
+            data1: { type: integer, nullable: false }
+            data2: { type: integer, nullable: false }
+            name: { type: string, nullable: false }
+    my_secondary_table:
+        id:
+            id: { type: integer, nullable: false, options: { autoincrement: true } }
+        fields:
+            main_id: { type: integer, nullable: false }
+        foreignKeys:
+            -   fields: [ main_id ]
+                foreignTable: my_main_table
+                foreignFields: [ id ]
+                options: { onDelete: CASCADE, onUpdate: CASCADE }
