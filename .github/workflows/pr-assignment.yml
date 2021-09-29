@@ -1,0 +1,42 @@
+name: Assign Pull Request to maintainers
+
+on:
+    pull_request:
+
+jobs:
+    assign:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: jwalton/gh-find-current-pr@v1
+              id: findPr
+              with:
+                  sha: ${{ github.event.pull_request.head.sha }}
+
+            - uses: octokit/request-action@v2.x
+              name: Get list of assignees
+              id: assignees
+                # Allow failures to be ignored.
+                # We will consider output as empty
+              continue-on-error: true
+              with:
+                  owner: ibexa
+                  repo: pr-assignees
+                  route: /repos/{owner}/{repo}/contents/${{ github.repository }}/maintainers
+              env:
+                  GITHUB_TOKEN: ${{ secrets.EZROBOT_PAT }}
+
+            - name: Assign Pull Request maintainers
+                # If previous step failed we assume that we got 404
+                # and thus there are no maintainers to be assigned
+              if: ${{ steps.assignees.outputs.data }}
+              run: |
+                  cat > input.json <<'EOF'
+                  ${{ steps.assignees.outputs.data }}
+                  EOF
+                  assignees=$(jq -r '.["content"]' input.json | base64 --decode)
+                  hub issue update ${{ steps.findPr.outputs.number }} -a $assignees
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
