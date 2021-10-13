@@ -128,6 +128,14 @@ class SchemaImporter implements APISchemaImporter
                 $columnConfiguration['options']['length'] = $columnConfiguration['length'];
             }
 
+            if (isset($columnConfiguration['scale'])) {
+                $columnConfiguration['options']['scale'] = $columnConfiguration['scale'];
+            }
+
+            if (isset($columnConfiguration['precision'])) {
+                $columnConfiguration['options']['precision'] = $columnConfiguration['precision'];
+            }
+
             $column = $table->addColumn(
                 $columnName,
                 $columnConfiguration['type'],
