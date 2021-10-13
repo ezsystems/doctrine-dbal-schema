@@ -77,12 +77,6 @@ class SchemaImporter implements APISchemaImporter
     ): void {
         $table = $schema->createTable($tableName);
 
-        if (!empty($defaultTableOptions)) {
-            foreach ($defaultTableOptions as $name => $value) {
-                $table->addOption($name, $value);
-            }
-        }
-
         if (isset($tableConfiguration['id'])) {
             $this->addSchemaTableColumns($table, $tableConfiguration['id']);
             $table->setPrimaryKey(array_keys($tableConfiguration['id']));
