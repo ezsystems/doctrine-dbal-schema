@@ -170,6 +170,22 @@ class SchemaImporterTest extends TestCase
                     ]
                 ),
             ],
+            7 => [
+                '07-numeric-options.yaml',
+                new Schema(
+                    [
+                        new Table(
+                            'my_table',
+                            [
+                                (new Column(
+                                    'data',
+                                    Type::getType('decimal'))
+                                )->setPrecision(19)->setScale(4),
+                            ]
+                        ),
+                    ]
+                ),
+            ],
         ];
 
         return $data;

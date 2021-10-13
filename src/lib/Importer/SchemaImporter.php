@@ -70,12 +70,6 @@ class SchemaImporter implements APISchemaImporter
     ): void {
         $table = $schema->createTable($tableName);
 
-        if (!empty($defaultTableOptions)) {
-            foreach ($defaultTableOptions as $name => $value) {
-                $table->addOption($name, $value);
-            }
-        }
-
         if (isset($tableConfiguration['id'])) {
             $this->addSchemaTableColumns($table, $tableConfiguration['id']);
             $table->setPrimaryKey(array_keys($tableConfiguration['id']));
@@ -124,6 +118,14 @@ class SchemaImporter implements APISchemaImporter
         foreach ($columnList as $columnName => $columnConfiguration) {
             if (isset($columnConfiguration['length'])) {
                 $columnConfiguration['options']['length'] = $columnConfiguration['length'];
+            }
+
+            if (isset($columnConfiguration['scale'])) {
+                $columnConfiguration['options']['scale'] = $columnConfiguration['scale'];
+            }
+
+            if (isset($columnConfiguration['precision'])) {
+                $columnConfiguration['options']['precision'] = $columnConfiguration['precision'];
             }
 
             $column = $table->addColumn(
