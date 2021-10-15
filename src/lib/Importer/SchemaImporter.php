@@ -142,6 +142,10 @@ class SchemaImporter implements APISchemaImporter
                 $columnConfiguration['options'] ?? []
             );
 
+            if (isset($columnConfiguration['default'])) {
+                $column->setDefault($columnConfiguration['default']);
+            }
+
             if (isset($columnConfiguration['nullable'])) {
                 $column->setNotnull(!$columnConfiguration['nullable']);
             }

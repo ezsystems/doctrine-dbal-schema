@@ -1,0 +1,7 @@
+tables:
+    my_table:
+        fields:
+            data:
+                type: string
+                options:
+                    default: foo

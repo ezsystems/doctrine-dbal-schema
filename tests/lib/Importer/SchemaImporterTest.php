@@ -186,6 +186,22 @@ class SchemaImporterTest extends TestCase
                     ]
                 ),
             ],
+            8 => [
+                '08-field-default.yaml',
+                new Schema(
+                    [
+                        new Table(
+                            'my_table',
+                            [
+                                (new Column(
+                                    'data',
+                                    Type::getType('string'))
+                                )->setDefault('foo'),
+                            ]
+                        ),
+                    ]
+                ),
+            ],
         ];
 
         return $data;
