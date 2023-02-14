@@ -80,7 +80,8 @@ class SchemaImporter implements APISchemaImporter
         }
 
         if (isset($tableConfiguration['foreignKeys'])) {
-            foreach ($tableConfiguration['foreignKeys'] as $foreignKeyName => $foreignKey) {
+            foreach ($tableConfiguration['foreignKeys'] as $key => $foreignKey) {
+                $foreignKeyName = is_string($key) ? $key : null;
                 $table->addForeignKeyConstraint(
                     $foreignKey['foreignTable'],
                     $foreignKey['fields'],
@@ -92,7 +93,8 @@ class SchemaImporter implements APISchemaImporter
         }
 
         if (isset($tableConfiguration['indexes'])) {
-            foreach ($tableConfiguration['indexes'] as $indexName => $index) {
+            foreach ($tableConfiguration['indexes'] as $key => $index) {
+                $indexName = is_string($key) ? $key : null;
                 $table->addIndex(
                     $index['fields'], $indexName, [], $index['options'] ?? []
                 );
@@ -100,7 +102,8 @@ class SchemaImporter implements APISchemaImporter
         }
 
         if (isset($tableConfiguration['uniqueConstraints'])) {
-            foreach ($tableConfiguration['uniqueConstraints'] as $indexName => $index) {
+            foreach ($tableConfiguration['uniqueConstraints'] as $key => $index) {
+                $indexName = is_string($key) ? $key : null;
                 $table->addUniqueIndex(
                     $index['fields'], $indexName, $index['options'] ?? []
                 );
